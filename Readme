@@ -146,3 +146,42 @@ Juegos online
 Sistemas colaborativos
 
 Dashboards que envían datos a todos los clientes al mismo tiempo
+
+------------------------------------------------------------------
+🟧 PROYECTO 2 — WebSocket + Docker + RabbitMQ (sí aplica)
+
+🚀 Este es el que permite crear Microservicios, porque ya tienes:
+
+Un servicio que recibe WebSockets
+
+Un broker para comunicar otros servicios
+
+Lógica que puede procesar en otro contenedor
+
+Con este proyecto puedes dividirlo en tres microservicios reales:
+
+Microservicio 1: WS-Gateway
+
+Solo recibe clientes
+
+Envía mensajes a RabbitMQ
+
+Vive en su propio contenedor
+
+Microservicio 2: Worker
+
+Lee mensajes de RabbitMQ
+
+Procesa lógica
+
+Puede tener su propia base de datos
+
+Microservicio 3: Broadcaster
+
+Lee mensajes procesados desde RabbitMQ
+
+Envia mensajes WebSocket a clientes
+
+No necesita base de datos
+
+🎯 Este es el proyecto que convierte tu práctica en una arquitectura de microservicios real.
