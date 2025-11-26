@@ -37,3 +37,112 @@ Un servidor WebSocket que envía el mensaje “Hola desde WebSocket” a cualqui
 
 docker build -t ws-simple .
 docker run -p 8080:8080 ws-simple
+
+
+--------------------------------------------------------------------------
+Construir:
+docker build -t nombre .
+
+Ejecutar:
+docker run -p 8080:8080 nombre
+
+Listar contenedores:
+docker ps
+
+Parar contenedor:
+docker stop ID
+
+Ver logs:
+docker logs ID
+
+Borrar contenedor:
+docker rm ID
+
+✅ 3. Puntos que preguntan sobre WebSocket
+Flujo básico:
+
+El cliente abre una conexión → new WebSocket(url)
+
+El servidor acepta → wss.on("connection")
+
+Cliente envía → ws.send()
+
+Servidor recibe → ws.on("message")
+
+Servidor responde o hace broadcast
+
+Cliente recibe → onmessage
+------------------------------------------------------------------------------
+EXPLICACIÓN BREVE DE LOS 3 PROYECTOS (los correctos)
+PROYECTO 1 — WebSocket + Docker (el más simple)
+
+Qué es:
+Un servidor WebSocket muy básico empaquetado en Docker.
+Cuando el cliente se conecta, el servidor envía un mensaje simple (“Hola desde WebSocket”).
+
+Para qué sirve:
+
+Entender qué es un WebSocket.
+
+Diferenciar HTTP vs WebSocket.
+
+Aprender a exponer un servidor dentro de un contenedor.
+
+Cuándo se usa en la vida real:
+
+Notificaciones simples.
+
+Conexión en tiempo real mínima.
+
+Tests de comunicación entre apps.
+
+PROYECTO 2 — WebSocket + Docker + RabbitMQ (intermedio)
+
+Qué es:
+Un servidor WebSocket que además se integra con un sistema de mensajería (RabbitMQ).
+El WebSocket recibe un mensaje → lo envía a RabbitMQ → un consumidor lo procesa.
+
+Para qué sirve:
+
+Entender arquitectura basada en eventos.
+
+Practicar comunicación WebSocket ↔ RabbitMQ.
+
+Ver cómo un mensaje “viaja” por distintos servicios Docker.
+
+Usado para:
+
+Sistemas distribuidos que necesitan comunicación en tiempo real + procesamiento asíncrono.
+
+Chats, notificaciones, colas de tareas, logs.
+
+PROYECTO 3 — Mini Chat en Tiempo Real (WebSocket + Docker)
+
+Qué es:
+Un mini chat funcional:
+
+varios clientes se conectan
+
+escriben mensajes
+
+todos los clientes los reciben en tiempo real
+
+Todo se ejecuta en un contenedor Docker.
+
+Para qué sirve:
+
+Aprender WebSockets en un caso real.
+
+Ver comunicación bidireccional real-time.
+
+Practicar arquitectura cliente-servidor con estado persistente en memoria.
+
+Usos reales:
+
+Chats
+
+Juegos online
+
+Sistemas colaborativos
+
+Dashboards que envían datos a todos los clientes al mismo tiempo
