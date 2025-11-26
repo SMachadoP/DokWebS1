@@ -1,0 +1,39 @@
+Primero: Conceptos súper claros (en 30 segundos)
+Docker
+
+Es una herramienta para empaquetar aplicaciones en contenedores.
+
+Un contenedor = una app + sus dependencias + su entorno.
+
+Comandos básicos:
+
+docker build -t nombre .
+
+docker run -p 3000:3000 nombre
+
+docker ps → ver contenedores
+
+docker stop ID → detener contenedor
+
+docker-compose up -d → levantar varios servicios
+
+WebSocket
+
+Protocolo que permite comunicación en tiempo real bidireccional.
+
+Mantiene la conexión abierta.
+
+Ideal para chats, sensores, notificaciones, etc.
+
+🔥 PROYECTO 1: WebSocket + Docker (el más simple)
+
+Perfecto para cualquier prueba básica.
+
+✔️ ¿Qué hace este proyecto?
+
+Un servidor WebSocket que envía el mensaje “Hola desde WebSocket” a cualquier cliente que se conecte.
+
+📌 Ejecutar
+
+docker build -t ws-simple .
+docker run -p 8080:8080 ws-simple
